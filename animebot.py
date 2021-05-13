@@ -143,7 +143,6 @@ async def parser(message, tags, pages, chat_id, info=None, ch_id=None): #Usual p
 			ikeyboard.row(*row_btns)
 			text_and_data = (
 				('↧ Download', x[str(ch_id)]['id'][0]),
-				('✘ Support Group ✘', https://t.me/coffinxsupport),
 			)
 			row_btns = (types.InlineKeyboardButton(text, callback_data=callback_cb.new(function=text, data=data)) for text, data in text_and_data)
 			ikeyboard.row(*row_btns)
