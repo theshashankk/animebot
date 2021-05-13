@@ -1,1 +1,1 @@
-worker: animebot.py
+worker: python3 animebot.py
