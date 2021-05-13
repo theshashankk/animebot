@@ -42,7 +42,7 @@ async def start(message: types.Message):
 			keyboard_markup.row(*(types.KeyboardButton(text) for text in btns_text))
 			btns_text = ('Loli (18+)', 'Neko')
 			keyboard_markup.row(*(types.KeyboardButton(text) for text in btns_text))
-			await message.reply("Yoo!\nMy name is @anime_bot! I am your personal assistant in the anime world! Yoroshiku onegaishimasu!\n\nUse the keyboard below to navigate the menu.\n\nDeveloper: @ev3me", reply_markup=keyboard_markup)
+			await message.reply("𝙔𝙊𝙊!\n𝖬𝖸 𝖲𝖤𝖫𝖥 𝖢𝖮𝖥𝖥𝖨𝖭 𝖷 𝖠𝖭𝖨𝖬𝖤 𝖡𝖮𝖳! 𝖨 𝖠𝖬 𝖸𝖮𝖴𝖱 𝖯𝖤𝖱𝖲𝖮𝖭𝖠𝖫 𝖠𝖲𝖲𝖨𝖲𝖳𝖠𝖭𝖳 𝖨𝖭 𝖠𝖭𝖨𝖬𝖤 𝖶𝖮𝖱𝖫𝖣! 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝘾𝙊𝙁𝙁𝙄𝙉 𝙓\n\n𝚄𝚂𝙴 𝚃𝙷𝙴 𝙺𝙴𝚈𝙱𝙾𝙰𝚁𝙳 𝙱𝙴𝙻𝙾𝚆 𝚃𝙾 𝙽𝙰𝚅𝙸𝙶𝙰𝚃𝙴 𝚃𝙷𝙴 𝙼𝙴𝙽𝚄.\n\nSᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ: @CoffinXsupport", reply_markup=keyboard_markup)
 			stick = random.randint(0, len(stickers) - 1)
 			await message.answer_sticker(sticker = stickers[stick])
 		except Exception:
@@ -63,7 +63,7 @@ async def commands(message=None, chat_id=None, chan=None, data=None):
 	chat_id = source.chat.id
 	if data == None:
 		data = message.text
-		if '@anime_bot' in data:
+		if '@CoffinXanimeBot' in data:
 			data = data.replace('@uncensored_bot', '')
 		try:
 			data = data.split(' ', 1)[0]
@@ -95,7 +95,7 @@ async def idd(message, tags=None):
 		client = Moebooru('yandere')
 		posts = client.post_list(tags=tags)
 		for post in posts:
-			urllib.request.urlretrieve(post['file_url'], "tmp/anime_bot_" + str(randomint) + ".jpg")
+			urllib.request.urlretrieve(post['file_url'], "tmp/CoffinXanimeBot_" + str(randomint) + ".jpg")
 		try:
 			c_id = parse_data['commands'].index(lastcmd.get(message.chat.id))
 		except:
@@ -107,7 +107,7 @@ async def idd(message, tags=None):
 		row_btns = (types.InlineKeyboardButton(text, callback_data=callback_cb.new(function=text, data=data)) for text, data in text_and_data)
 		ckeyboard.row(*row_btns)
 		reply_markup = ckeyboard
-		photo = open('tmp/anime_bot_' + str(randomint) + ".jpg", 'rb')
+		photo = open('tmp/CoffinXanimeBot_' + str(randomint) + ".jpg", 'rb')
 		await message.answer_document(photo, reply_markup=reply_markup)
 		photo.close()
 		os.remove('tmp/anime_bot_' + str(randomint) + ".jpg")
